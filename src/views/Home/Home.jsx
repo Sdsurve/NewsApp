@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Home.css';
 import logo from './Saamtv_logo.avif';
+import dotenv from "dotenv";
 import hamburger from './menu.png';
 import NewsArticles from "./../../components/NewsArticals/NewsArticals"
 
@@ -11,7 +12,7 @@ function Home() {
 
     const loadNews = async () => {
         try {
-            const res = await axios.get(`https://newsapi.org/v2/everything?q=${search}&from=2024-07-18&to=2024-07-18&sortBy=popularity&apiKey=${process.env.REACT_APP_API_KEY}`);
+            const res = await axios.get(`https://newsapi.org/v2/everything?q=${search}&from=2024-07-18&to=2024-07-18&sortBy=popularity&apiKey=502c7de671af4b13b8fdf719f38e0028`);
             setNews(res.data.articles);
         } catch (error) {
             console.error('Error fetching news:', error);
